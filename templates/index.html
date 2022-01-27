@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Application to predict if passsenger in titanic disaster survived/not</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" name="pclass" id="pclass" placeholder="pclass">
+            <input type="text" name="sex" id="sex" placeholder="sex (male/female)">
+            <input type="number" name="age" id="age" placeholder="age">
+            <input type="number" name="sibsp" id="sibsp" placeholder="sibsp">
+            <input type="number" name="parch" id="parch"placeholder="parch">
+            <input type="number" step="any" name="fare" id="fare" placeholder="fare">
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
